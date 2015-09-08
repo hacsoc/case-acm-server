@@ -1,0 +1,12 @@
+jolly:
+  image: hacsoc/jolly-advisor
+  links:
+    - jollypostgres
+  env_file: jolly/jolly.env
+  container_name: jolly
+
+jollypostgres:
+  image: postgres
+  env_file: jolly/jollypostgres.env
+  volumes:
+    - /srv/volume/jolly/jollypostgres:/var/lib/postgresql/data

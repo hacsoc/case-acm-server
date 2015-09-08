@@ -1,0 +1,15 @@
+[Unit]
+Description=CWRU ACM docker hosting
+Requires=docker.service
+After=network.target docker.service
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/local/bin/docker-compose -f /srv/acm/%i.yml up
+ExecStartPost=/srv/acm/net_start.sh %i
+ExecStop=/srv/acm/net_stop.sh %i
+ExecStop=/usr/local/bin/docker-compose -f /srv/acm/%i.yml stop
+
+[Install]
+WantedBy=multi-user.target

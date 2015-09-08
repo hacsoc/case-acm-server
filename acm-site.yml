@@ -1,0 +1,3 @@
+acm-site:
+  image: hacsoc/acm.case.edu
+  container_name: acm-site
