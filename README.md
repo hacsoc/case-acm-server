@@ -20,3 +20,10 @@ Service names may not:
 2. be "default" (not case sensitive)
 3. be any other service name (not case sensitive)
 4. contain "_", " ", "+", "@", "#", "$", "/", or "\"
+
+## Management script
+The script `server` can control stopping, starting, restarting, and updating services.  The `server_default` script should be symlinked to `server_<name>`, where <name> is the name of the service, and can manage the <name> service (specified by <name>.yml).
+
+To add a script, create a group <name>, add it to sudoers with the ability to run `server_<name>` with NOPASSWD, and add the users that need to manage that service to the proper group.
+
+For now, read the `server` and `server_default` scripts to see how they work (they're not too long).
