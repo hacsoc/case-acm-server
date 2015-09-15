@@ -11,7 +11,7 @@ error() {
     exit 1
 }
 
-HELPTEXT="Usage: $0 <start|stop|restart|pull>"
+HELPTEXT="Usage: $0 <start|stop|restart|pull|update>"
 
 if [[ $SERVICE == "default" ]]; then
     error "You must symlink this script to server_<name> and run that"
@@ -29,4 +29,4 @@ if [[ $SERVICE == "" ]]; then
     error "${HELPTEXT}"
 fi
 
-./server ${SERVICE} $1
+/srv/acm/bin/server ${SERVICE} $1
