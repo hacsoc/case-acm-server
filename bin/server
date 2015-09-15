@@ -1,0 +1,72 @@
+#!/bin/bash
+
+set -e
+
+start() {
+    systemctl start acm@${SERVICE}
+}
+
+stop() {
+    systemctl stop acm@${SERVICE}
+}
+
+restart() {
+    systemctl restart acm@${SERVICE}
+}
+
+pull() {
+    docker-compose -f /srv/acm/${SERVICE}.yml pull
+}
+
+error() {
+    echo $1 1>&2
+    exit 1
+}
+
+
+key="$2"
+SERVICE="$1"
+
+HELPTEXT="You must specify <start|stop|restart|pull> <service-name>"
+
+if [[ $EUID -ne 0 ]]; then
+    error "This script must be run as root"
+fi
+
+if [[ $1 == "" ]]; then
+    error "${HELPTEXT}"
+fi
+
+if [[ $2 == "" ]]; then
+    error "${HELPTEXT}"
+fi
+
+
+case $key in
+
+    start)
+    start
+    exit 0
+    ;;
+
+    restart)
+    restart
+    exit 0
+    ;;
+
+    stop)
+    stop
+    exit 0
+    ;;
+
+    pull)
+    pull
+    exit 0
+    ;;
+
+    *)
+    error "${HELPTEXT}"
+    ;;
+esac
+
+

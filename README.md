@@ -12,3 +12,11 @@ Things are a bit specific to the ACM server's set up for now, so this will be ra
 3. acm@.server in /etc/systemd/system/
 4. A folder for each service with the same name as the service, containing necessary *.env files and a single file called MAC with the services' container's mac address (as registered w/ CWRU ITS).
 5. Necessary mountpoints in /srv/volume/
+
+### Disalowed names
+Service names may not:
+
+1. be "bin" (not case sensitive)
+2. be "default" (not case sensitive)
+3. be any other service name (not case sensitive)
+4. contain "_", " ", "+", "@", "#", "$", "/", or "\"

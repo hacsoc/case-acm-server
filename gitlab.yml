@@ -3,6 +3,7 @@ gitlabpostgresql:
   volumes:
     - /srv/volume/gitlab/postgresql:/var/lib/postgresql
   env_file: gitlab/postgres.env
+  restart: no
 gitlab:
   image: sameersbn/gitlab
   container_name: gitlab
@@ -12,7 +13,9 @@ gitlab:
   env_file: gitlab/gitlab.env
   volumes:
     - /srv/volume/gitlab/gitlab:/home/git/data
+  restart: no
 gitlabredis:
   image: sameersbn/redis
   volumes:
     - /srv/volume/gitlab/redis:/var/lib/redis
+  restart: no
