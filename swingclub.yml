@@ -1,0 +1,3 @@
+swingclub:
+  image: matthewbentley/swingclub
+  container_name: swingclub

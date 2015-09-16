@@ -1,0 +1,5 @@
+umb:
+  image: umb
+  container_name: umb
+  volumes:
+    - /srv/volume/umb/umb:/var/www
