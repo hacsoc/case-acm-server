@@ -1,7 +1,9 @@
 [Unit]
-Description=CWRU ACM docker hosting
+Description=CWRU ACM docker hosting for %i
 Requires=docker.service
 After=network.target docker.service
+ConditionFileNotEmpty=/srv/acm/%i.yml
+ConditionFileNotEmpty=/srv/acm/%i/MAC
 
 [Service]
 Type=simple
