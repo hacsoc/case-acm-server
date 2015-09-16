@@ -32,7 +32,7 @@ error() {
 key="$2"
 SERVICE="$1"
 
-HELPTEXT="You must specify <start|stop|restart|pull|update> <service-name>"
+HELPTEXT="You must specify $0 <service-name> <start|stop|restart|pull|update>"
 
 if [[ $EUID -ne 0 ]]; then
     error "This script must be run as root"
