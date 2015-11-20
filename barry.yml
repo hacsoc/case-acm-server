@@ -1,0 +1,4 @@
+barry:
+  image: ianneub/redirect
+  container_name: barry
+  env_file: barry/barry.env

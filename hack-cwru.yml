@@ -1,0 +1,3 @@
+hack-cwru:
+  container_name: hack-cwru
+  image: hacsoc/hack.cwru.edu
