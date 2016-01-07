@@ -1,3 +1,17 @@
 hack-cwru:
   container_name: hack-cwru
-  image: hacsoc/hack.cwru.edu
+  links:
+    - hackcwru-signup:hackcwru-signup
+  image: hacsoc/hackcwru2016-website
+
+hackcwrupostgresql:
+  image: sameersbn/postgresql
+  volumes:
+    - /srv/volume/hackcwru-signup/postgresql:/var/lib/postgresql
+  env_file: hackcwru-signup/postgres.env
+
+hackcwru-signup:
+  image: hacsoc/hackcwru-signup
+  links:
+    - hackcwrupostgresql:postgres
+  env_file: hackcwru-signup/signup.env
