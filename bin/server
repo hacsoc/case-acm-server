@@ -28,6 +28,10 @@ error() {
     exit 1
 }
 
+logs() {
+    docker-compose -f /srv/acm/${SERVICE}.yml logs
+}
+
 
 key="$2"
 SERVICE="$1"
@@ -71,6 +75,11 @@ case $key in
 
     update)
     update
+    exit 0
+    ;;
+
+    logs)
+    logs
     exit 0
     ;;
 

@@ -1,0 +1,6 @@
+slacksoc:
+  image: hacsoc/slacksoc:v0.0.4
+  container_name: slacksoc
+  env_file: slacksoc/slacksoc.env
+  restart: "no"
+  net: "none"

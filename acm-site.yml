@@ -1,3 +1,4 @@
 acm-site:
   image: hacsoc/acm
   container_name: acm-site
+  env_file: acm-site/acm-site.env

@@ -10,8 +10,11 @@ Type=simple
 Restart=always
 ExecStart=/usr/local/bin/docker-compose -f /srv/acm/%i.yml up
 ExecStartPost=/srv/acm/net_start.sh %i
+#ExecStop=/usr/local/bin/docker-compose -f /srv/acm/%i.yml stop
 ExecStop=/srv/acm/net_stop.sh %i
-ExecStop=/usr/local/bin/docker-compose -f /srv/acm/%i.yml stop
+RestartSec=5
+Restart=no
+
 
 [Install]
 WantedBy=multi-user.target
