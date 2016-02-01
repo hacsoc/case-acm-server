@@ -1,0 +1,4 @@
+frn:
+  image: hacsoc/frn
+  container_name: frn
+  env_file: frn/frn.env

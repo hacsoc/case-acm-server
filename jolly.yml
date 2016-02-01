@@ -6,7 +6,7 @@ jolly:
   container_name: jolly
 
 jollypostgres:
-  image: postgres
+  image: postgres:9.4
   env_file: jolly/jollypostgres.env
   volumes:
     - /srv/volume/jolly/jollypostgres:/var/lib/postgresql/data

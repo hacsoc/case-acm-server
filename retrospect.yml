@@ -1,0 +1,14 @@
+retrospect:
+  image: wordpress
+  links:
+    - retrospectmysql:mysql
+  env_file: retrospect/retrospect.env
+  container_name: retrospect
+  volumes:
+    - /srv/volume/retrospect/retrospect:/var/www/html
+
+retrospectmysql:
+  image: mariadb
+  env_file: retrospect/retrospectmysql.env
+  volumes:
+    - /srv/volume/retrospect/retrospectmysql:/var/lib/mysql
