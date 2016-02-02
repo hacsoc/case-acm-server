@@ -1,5 +1,5 @@
 slacksoc:
-  image: hacsoc/slacksoc:use-library
+  image: hacsoc/slacksoc:v0.2.2
   container_name: slacksoc
   env_file: slacksoc/slacksoc.env
   restart: "no"
