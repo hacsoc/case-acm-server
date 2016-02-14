@@ -1,5 +1,5 @@
 slacksoc:
-  image: hacsoc/slacksoc:v0.2.2
+  image: hacsoc/slacksoc:hack-cwru
   container_name: slacksoc
   env_file: slacksoc/slacksoc.env
   restart: "no"

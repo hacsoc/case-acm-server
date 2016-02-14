@@ -11,7 +11,7 @@ hackcwrupostgresql:
   env_file: hackcwru-signup/postgres.env
 
 hackcwru-signup:
-  image: hacsoc/hackcwru-signup
+  image: hacsoc/hackcwru-signup:signup_time
   links:
     - hackcwrupostgresql:postgres
   env_file: hackcwru-signup/signup.env
