@@ -1,0 +1,3 @@
+change:
+  image: hacsoc/change.case.edu
+  container_name: change

@@ -1,0 +1,7 @@
+oxdashboard:
+  image: matthewbentley/oxdashboard
+  env_file: oxdashboard/oxdashboard.env
+  container_name: oxdashboard
+  volumes:
+    - /srv/volume/oxdashboard:/db
+

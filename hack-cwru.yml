@@ -5,13 +5,13 @@ hack-cwru:
   image: hacsoc/hackcwru2016-website
 
 hackcwrupostgresql:
-  image: sameersbn/postgresql
+  image: postgres:9.4
   volumes:
-    - /srv/volume/hackcwru-signup/postgresql:/var/lib/postgresql
+    - /srv/volume/hackcwru-signup/postgresql/data:/var/lib/postgresql/data
   env_file: hackcwru-signup/postgres.env
 
 hackcwru-signup:
-  image: hacsoc/hackcwru-signup:signup_time
+  image: hacsoc/hackcwru-signup
   links:
     - hackcwrupostgresql:postgres
   env_file: hackcwru-signup/signup.env

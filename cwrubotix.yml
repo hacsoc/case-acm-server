@@ -1,0 +1,3 @@
+cwrubotix:
+  image: hacsoc/cwrubotix
+  container_name: cwrubotix

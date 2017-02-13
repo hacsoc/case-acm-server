@@ -10,3 +10,9 @@ jollypostgres:
   env_file: jolly/jollypostgres.env
   volumes:
     - /srv/volume/jolly/jollypostgres:/var/lib/postgresql/data
+
+jollycron:
+  image: hacsoc/jolly-advisor-cron
+  env_file: jolly/jolly.env
+  links:
+    - jollypostgres

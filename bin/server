@@ -21,6 +21,11 @@ pull() {
 update() {
     pull
     restart
+    clean
+}
+
+clean() {
+    docker rmi $(docker images -f dangling=true -q)
 }
 
 error() {
@@ -75,6 +80,11 @@ case $key in
 
     update)
     update
+    exit 0
+    ;;
+
+    clean)
+    clean
     exit 0
     ;;
 

@@ -1,4 +1,4 @@
 barry:
-  image: ianneub/redirect
+  image: hacsoc/redirect
   container_name: barry
   env_file: barry/barry.env

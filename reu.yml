@@ -1,0 +1,3 @@
+reu:
+  image: hacsoc/reu-apply
+  container_name: reu

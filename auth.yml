@@ -1,0 +1,12 @@
+auth:
+  container_name: auth
+  links:
+    - authpostgresql:postgresql
+  image: hacsoc/auth
+  env_file: auth/auth.env
+
+authpostgresql:
+  image: postgres
+  volumes:
+    - /srv/volume/auth/postgresql:/var/lib/postgresql/data
+  env_file: auth/postgres.env

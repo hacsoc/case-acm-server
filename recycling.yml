@@ -1,0 +1,4 @@
+recycling:
+  image: hacsoc/redirect
+  container_name: recycling
+  env_file: recycling/recycling.env
