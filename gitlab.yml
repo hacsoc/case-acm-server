@@ -1,7 +1,0 @@
-gitlab:
-  image: hacsoc/gitlab
-  container_name: gitlab
-  volumes:
-    - /srv/volume/gitlab/config:/etc/gitlab
-    - /srv/volume/gitlab/logs:/var/log/gitlab
-    - /srv/volume/gitlab/data:/var/opt/gitlab
