@@ -25,7 +25,9 @@ update() {
 }
 
 clean() {
-    docker rmi $(docker images -f dangling=true -q)
+    if [[ -n $(docker images -f dangling=true -q) ]]; then
+        docker rmi $(docker images -f dangling=true -q)
+    fi
 }
 
 error() {
