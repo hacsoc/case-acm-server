@@ -1,0 +1,14 @@
+marketplace:
+  image: wordpress
+  links:
+    - marketplacemysql:mysql
+  env_file: marketplace/marketplace.env
+  container_name: marketplace
+  volumes:
+    - /srv/volume/marketplace/marketplace:/var/www/html
+
+marketplacemysql:
+  image: mariadb
+  env_file: marketplace/marketplacemysql.env
+  volumes:
+    - /srv/volume/marketplace/marketplacemysql:/var/lib/mysql

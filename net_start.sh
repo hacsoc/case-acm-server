@@ -3,6 +3,7 @@
 mkdir -p /var/run/netns/
 
 NAME=$1
+echo $NAME
 
 MAC=`cat /srv/acm/${NAME}/MAC`
 sleep 1
@@ -29,5 +30,5 @@ sleep 1
 echo "PUTTING UP ${NAME} INTERFACE!!!!!"
 ip netns exec ${PID} ip l set dev ${NAME} up
 sleep 1
-ip netns exec ${PID} dhcpcd ${NAME}
+ip netns exec ${PID} dhcpcd -w ${NAME}
 

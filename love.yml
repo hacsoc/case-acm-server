@@ -1,0 +1,3 @@
+love:
+  image: hacsoc/love.case.edu
+  container_name: love
