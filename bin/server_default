@@ -2,7 +2,7 @@
 
 IFS='_' read -ra SERVICE <<< "$0"
 
-# This is kind of aweful, but it gets the name of the service from
+# This is kind of awful, but it gets the name of the service from
 # server_<service>
 SERVICE=${SERVICE[$((${#SERVICE[@]}-1))]}
 

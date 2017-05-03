@@ -1,6 +1,8 @@
 slacksoc:
-  image: hacsoc/slacksoc:v0.4.3
+  image: hacsoc/slacksoc
   container_name: slacksoc
   env_file: slacksoc/slacksoc.env
   restart: "no"
   net: "none"
+  volumes:
+    - /srv/volume/slacksoc:/var/slacksoc

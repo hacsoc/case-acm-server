@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex -o pipefail
 
 NAME=$1
 
@@ -10,4 +11,4 @@ ip netns exec ${PID} dhcpcd -k ${NAME} || true
 
 rm /var/run/netns/${PID}
 
-/usr/bin/docker rm $(/usr/local/bin/docker-compose -f /srv/acm/${NAME}.yml ps -q)
+/usr/bin/docker rm $(/usr/local/bin/docker-compose -f /srv/acm/${NAME}.yml ps -q) || true
