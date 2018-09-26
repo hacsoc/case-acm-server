@@ -1,17 +1,17 @@
 hack-cwru:
   container_name: hack-cwru
-  links:
-    - hackcwru-signup:hackcwru-signup
-  image: hacsoc/hackcwru2016-website
-
-hackcwrupostgresql:
-  image: postgres:9.4
-  volumes:
-    - /srv/volume/hackcwru-signup/postgresql/data:/var/lib/postgresql/data
-  env_file: hackcwru-signup/postgres.env
-
-hackcwru-signup:
-  image: hacsoc/hackcwru-signup
-  links:
-    - hackcwrupostgresql:postgres
-  env_file: hackcwru-signup/signup.env
+#  links:
+#    - hackcwru-signup:hackcwru-signup
+  image: hacsoc/hackcwru-website-v2
+#
+#hackcwrupostgresql:
+#  image: postgres:9.4
+#  volumes:
+#    - /srv/volume/hackcwru-signup/postgresql/data:/var/lib/postgresql/data
+#  env_file: hackcwru-signup/postgres.env
+#
+#hackcwru-signup:
+#  image: hacsoc/hackcwru-signup
+#  links:
+#    - hackcwrupostgresql:postgres
+#  env_file: hackcwru-signup/signup.env

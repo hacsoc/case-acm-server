@@ -1,0 +1,3 @@
+progress:
+  image: matthewbentley/progress.case.edu
+  container_name: progress

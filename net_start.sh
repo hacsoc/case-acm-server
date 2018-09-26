@@ -10,7 +10,7 @@ sleep 1
 
 PID=0
 while [[ PID -eq 0 ]]; do
-    PID=`docker inspect -f '{{.State.Pid}}' ${NAME}`
+    PID=`docker inspect -f '{{.State.Pid}}' ${NAME} || echo 0`
     sleep 1
 done
 sleep 1
